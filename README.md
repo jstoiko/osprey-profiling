@@ -122,24 +122,6 @@ Installation:
 sudo pip install psrecord
 sudo apt-get install python-matplotlib python-tk
 npm install -g artillery
-touch artillery.yml
-```
-
-Place this YAML in `artillery.yml`:
-```yaml
-config:
-  target: 'http://localhost:3000'
-  phases:
-    - duration: 60
-      arrivalRate: 20
-  defaults:
-    headers:
-      Accept: application/json
-      Authorization: qwe
-scenarios:
-  - flow:
-    - get:
-        url: "/songs?genre=foo&access_token=123"
 ```
 
 In three different terminals:
@@ -156,7 +138,7 @@ psrecord $(pgrep node -n) --interval 1 --plot osprey.png
 
 3. Start `artillery` to generate requests:
 ```sh
-artillery run artillery.yml
+artillery run osprey.yml
 ```
 
 When `artillery` finishes making requests, switch to the tab with the profiler running, press `Ctrl+C` and wait for it to draw a plot. When it finishes you can view plot with graph in a `osprey.png` file.
@@ -255,7 +237,34 @@ Percentage of the requests served within a certain time (ms)
 ```
 
 ## CPU and memory usage
+### Setup
+Installation:
+```sh
+sudo pip install psrecord
+sudo apt-get install python-matplotlib python-tk
+npm install -g artillery
+```
+
+In three different terminals:
+
+1. Start server with:
+```sh
+node bin/osprey-mock-service.js -f /home/post/projects/raml-examples/others/world-music-api/api.raml -p 3000
+```
+
+2. Start profiler:
+```sh
+psrecord $(pgrep node -n) --interval 1 --plot osprey-mock.png
+```
+
+3. Start `artillery` to generate requests:
+```sh
+artillery run osprey-mock-service.yml
+```
+
+When `artillery` finishes making requests, switch to the tab with the profiler running, press `Ctrl+C` and wait for it to draw a plot. When it finishes you can view plot with graph in a `osprey.png` file.
+
 ### master
-TODO
+![](osprey-mock-service-master-cpu-memory.png)
 ### rework_webapi_parser
-TODO
+![](osprey-mock-service-rework_webapi_parser-cpu-memory.png)

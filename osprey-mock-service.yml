@@ -1,0 +1,13 @@
+config:
+  target: 'http://localhost:3000'
+  phases:
+    - duration: 60
+      arrivalRate: 20
+  defaults:
+    headers:
+      Accept: application/json
+      Authorization: qwe
+scenarios:
+  - flow:
+    - get:
+        url: "/v1/songs?genre=foo&access_token=123"
