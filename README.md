@@ -1,5 +1,5 @@
 # General
-Used RAML: https://github.com/raml-org/raml-examples/blob/master/others/world-music-api/api.raml
+Used RAML: [world-music-api](world-music-api)
 
 NodeJS version: 13.5.0
 
@@ -122,10 +122,10 @@ Installation:
 sudo pip install psrecord
 sudo apt-get install python-matplotlib python-tk
 npm install -g artillery
-touch settings.yml
+touch artillery.yml
 ```
 
-Place this YAML in `settings.yml`:
+Place this YAML in `artillery.yml`:
 ```yaml
 config:
   target: 'http://localhost:3000'
@@ -156,7 +156,7 @@ psrecord $(pgrep node -n) --interval 1 --plot osprey.png
 
 3. Start `artillery` to generate requests:
 ```sh
-artillery run settings.yml
+artillery run artillery.yml
 ```
 
 When `artillery` finishes making requests, switch to the tab with the profiler running, press `Ctrl+C` and wait for it to draw a plot. When it finishes you can view plot with graph in a `osprey.png` file.
