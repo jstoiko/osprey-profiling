@@ -3,6 +3,8 @@ Used RAML: https://github.com/raml-org/raml-examples/blob/master/others/world-mu
 
 NodeJS version: 13.5.0
 
+All examples should be run from cloned github repos of `osprey` and `osprey-mock-service`.
+
 # osprey
 Osprey code in `index.js`:
 ```js
