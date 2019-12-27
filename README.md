@@ -3,7 +3,13 @@ Used RAML: [world-music-api](world-music-api)
 
 NodeJS version: 13.5.0
 
-All examples should be run from cloned github repos of `osprey` and `osprey-mock-service`.
+Versions:
+* osprey:
+  * master: a306d8e879cb5e18cfcd06ba8fca56c883957d0a
+  * rework_webapi_parser: 828169c3bbba0e539972d9b63eba07704d066968
+* osprey-mock-service:
+  * master: 8cc6b778b2aaae050a5f01ff338f2a29b679ec48
+  * rework_webapi_parser: 35b392e5e9607750ad5ea67e614b70ba61568f80
 
 # osprey
 
