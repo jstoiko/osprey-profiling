@@ -6,26 +6,24 @@ NodeJS version: 13.5.0
 All examples should be run from cloned github repos of `osprey` and `osprey-mock-service`.
 
 # osprey
-Osprey code in `index.js`:
-```js
-const express = require('express')
-const osprey = require('../..')
 
-const router = osprey.Router()
-
-router.get('/songs', function (req, res) {
-  res.json([{ username: 'johndoe', password: 'doe' }])
-})
-
-osprey.loadFile('/home/post/projects/raml-examples/others/world-music-api/api.raml')
-  .then(function (middleware) {
-    const app = express()
-    app.use('/', middleware, router)
-    app.listen(3000, function () {
-      console.log('Application listening on ' + 3000 + '...')
-    })
-  })
+## Setup
+To test Osprey from `master`, install it via npm:
+```sh
+cd ./app
+npm install
+npm install osprey
 ```
+
+To test `osprey` from `rework_webapi_parser` branch, install it via Makefile and link it to osprey app:
+```sh
+make all
+cd ./app
+npm install
+npm link path/to/cloned/osprey
+```
+
+Osprey app code can be found in [osprey-app.js](./src/osprey-app.js).
 
 ## Request/response time
 
@@ -37,7 +35,7 @@ sudo apt install apache2-utils
 
 Start server with:
 ```sh
-node index.js
+node osprey-app.js
 ```
 
 Make requests and profile with (this makes 50000 requests with 10 concurrency):
@@ -128,7 +126,7 @@ In three different terminals:
 
 1. Start server with:
 ```sh
-node index.js
+node osprey-app.js
 ```
 
 2. Start profiler:
@@ -149,6 +147,20 @@ When `artillery` finishes making requests, switch to the tab with the profiler r
 ![](osprey-rework_webapi_parser-cpu-memory.png)
 
 # osprey-mock-service
+## Setup
+To test `osprey-mock-service` from `master`, install it globally via npm:
+```sh
+npm install -g osprey-mock-service
+```
+and call it with `osprey-mock-service` command during profiling.
+
+To test `osprey-mock-service` from `rework_webapi_parser` branch, install it via Makefile:
+```sh
+make all
+```
+and call it with `node path/to/cloned/mock/bin/osprey-mock-service.js`.
+
+
 ## Request/response time
 ### Setup
 Installation:
@@ -158,7 +170,7 @@ sudo apt install apache2-utils
 
 Start server with:
 ```sh
-node bin/osprey-mock-service.js -f /home/post/projects/raml-examples/others/world-music-api/api.raml -p 3000
+osprey-mock-service -f /path/to/osprey-profiling/world-music-api/api.raml -p 3000
 ```
 
 Make requests and profile with (this makes 50000 requests with 10 concurrency):
@@ -249,7 +261,7 @@ In three different terminals:
 
 1. Start server with:
 ```sh
-node bin/osprey-mock-service.js -f /home/post/projects/raml-examples/others/world-music-api/api.raml -p 3000
+osprey-mock-service -f /path/to/osprey-profiling/world-music-api/api.raml -p 3000
 ```
 
 2. Start profiler:
