@@ -25,7 +25,6 @@ To test `osprey` from `rework_webapi_parser` branch, install it via Makefile and
 ```sh
 cd ./app
 npm install
-make clean
 make clone
 make install
 make link-osprey
