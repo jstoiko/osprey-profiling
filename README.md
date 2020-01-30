@@ -23,10 +23,11 @@ npm install osprey
 
 To test `osprey` from `rework_webapi_parser` branch, install it via Makefile and link it to osprey app:
 ```sh
-make all
 cd ./app
 npm install
-npm link path/to/cloned/osprey
+make clean
+make all
+make link-osprey
 ```
 
 Osprey app code can be found in [osprey-app.js](./src/osprey-app.js).
