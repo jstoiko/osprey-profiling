@@ -92,33 +92,33 @@ Document Path:          /songs?genre=foo&access_token=123
 Document Length:        41 bytes
 
 Concurrency Level:      10
-Time taken for tests:   15.327 seconds
+Time taken for tests:   13.739 seconds
 Complete requests:      50000
 Failed requests:        0
 Total transferred:      12400000 bytes
 HTML transferred:       2050000 bytes
-Requests per second:    3262.26 [#/sec] (mean)
-Time per request:       3.065 [ms] (mean)
-Time per request:       0.307 [ms] (mean, across all concurrent requests)
-Transfer rate:          790.08 [Kbytes/sec] received
+Requests per second:    3639.18 [#/sec] (mean)
+Time per request:       2.748 [ms] (mean)
+Time per request:       0.275 [ms] (mean, across all concurrent requests)
+Transfer rate:          881.36 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       3
-Processing:     1    3   1.6      3     210
-Waiting:        0    2   1.5      2     209
-Total:          2    3   1.6      3     210
+Connect:        0    0   0.1      0       8
+Processing:     0    3   1.4      2     212
+Waiting:        0    2   1.3      2     210
+Total:          1    3   1.4      2     212
 
 Percentage of the requests served within a certain time (ms)
-  50%      3
+  50%      2
   66%      3
   75%      3
   80%      3
-  90%      4
-  95%      5
-  98%      6
-  99%      7
- 100%    210 (longest request)
+  90%      3
+  95%      4
+  98%      5
+  99%      6
+ 100%    212 (longest request)
 ```
 
 ## CPU and memory usage
@@ -223,37 +223,39 @@ Percentage of the requests served within a certain time (ms)
 
 ### rework_webapi_parser
 ```
-Document Path:          /v1/songs?genre=foo&access_token=123
-Document Length:        0 bytes
+Document Path:          /songs?genre=foo&access_token=123
+Document Length:        760 bytes
 
 Concurrency Level:      10
-Time taken for tests:   42.809 seconds
+Time taken for tests:   50.858 seconds
 Complete requests:      50000
-Failed requests:        0
-Total transferred:      3750000 bytes
-HTML transferred:       0 bytes
-Requests per second:    1167.97 [#/sec] (mean)
-Time per request:       8.562 [ms] (mean)
-Time per request:       0.856 [ms] (mean, across all concurrent requests)
-Transfer rate:          85.54 [Kbytes/sec] received
+Failed requests:        49749
+   (Connect: 0, Receive: 0, Length: 49749, Exceptions: 0)
+Non-2xx responses:      50000
+Total transferred:      51736446 bytes
+HTML transferred:       40686446 bytes
+Requests per second:    983.13 [#/sec] (mean)
+Time per request:       10.172 [ms] (mean)
+Time per request:       1.017 [ms] (mean, across all concurrent requests)
+Transfer rate:          993.43 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       3
-Processing:     3    8   3.4      8     214
-Waiting:        3    8   3.3      7     214
-Total:          3    9   3.4      8     214
+Connect:        0    0   0.0      0       1
+Processing:     4   10   2.6      9      58
+Waiting:        4    9   2.5      8      57
+Total:          4   10   2.6      9      58
 
 Percentage of the requests served within a certain time (ms)
-  50%      8
-  66%      8
-  75%      9
-  80%      9
-  90%     11
-  95%     13
-  98%     17
-  99%     19
- 100%    214 (longest request)
+  50%      9
+  66%     10
+  75%     11
+  80%     12
+  90%     13
+  95%     14
+  98%     18
+  99%     20
+ 100%     58 (longest request)
 ```
 
 ## CPU and memory usage
