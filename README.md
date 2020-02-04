@@ -18,7 +18,6 @@ To test Osprey from `master`, install it via npm:
 ```sh
 cd ./app
 npm install
-npm install osprey
 ```
 
 To test `osprey` from `rework_webapi_parser` branch, install it via Makefile and link it to osprey app:
