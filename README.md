@@ -92,33 +92,33 @@ Document Path:          /songs?genre=foo&access_token=123
 Document Length:        41 bytes
 
 Concurrency Level:      10
-Time taken for tests:   41.210 seconds
+Time taken for tests:   15.327 seconds
 Complete requests:      50000
 Failed requests:        0
 Total transferred:      12400000 bytes
 HTML transferred:       2050000 bytes
-Requests per second:    1213.29 [#/sec] (mean)
-Time per request:       8.242 [ms] (mean)
-Time per request:       0.824 [ms] (mean, across all concurrent requests)
-Transfer rate:          293.84 [Kbytes/sec] received
+Requests per second:    3262.26 [#/sec] (mean)
+Time per request:       3.065 [ms] (mean)
+Time per request:       0.307 [ms] (mean, across all concurrent requests)
+Transfer rate:          790.08 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       9
-Processing:     2    8   2.7      7     218
-Waiting:        2    6   2.8      6     216
-Total:          2    8   2.7      8     219
+Connect:        0    0   0.1      0       3
+Processing:     1    3   1.6      3     210
+Waiting:        0    2   1.5      2     209
+Total:          2    3   1.6      3     210
 
 Percentage of the requests served within a certain time (ms)
-  50%      8
-  66%      8
-  75%      8
-  80%      8
-  90%      9
-  95%     11
-  98%     14
-  99%     18
- 100%    219 (longest request)
+  50%      3
+  66%      3
+  75%      3
+  80%      3
+  90%      4
+  95%      5
+  98%      6
+  99%      7
+ 100%    210 (longest request)
 ```
 
 ## CPU and memory usage
@@ -227,33 +227,33 @@ Document Path:          /v1/songs?genre=foo&access_token=123
 Document Length:        0 bytes
 
 Concurrency Level:      10
-Time taken for tests:   75.142 seconds
+Time taken for tests:   42.809 seconds
 Complete requests:      50000
 Failed requests:        0
 Total transferred:      3750000 bytes
 HTML transferred:       0 bytes
-Requests per second:    665.41 [#/sec] (mean)
-Time per request:       15.028 [ms] (mean)
-Time per request:       1.503 [ms] (mean, across all concurrent requests)
-Transfer rate:          48.74 [Kbytes/sec] received
+Requests per second:    1167.97 [#/sec] (mean)
+Time per request:       8.562 [ms] (mean)
+Time per request:       0.856 [ms] (mean, across all concurrent requests)
+Transfer rate:          85.54 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       2
-Processing:     2   15   5.5     14     222
-Waiting:        2   14   5.4     13     222
-Total:          2   15   5.5     14     222
+Connect:        0    0   0.1      0       3
+Processing:     3    8   3.4      8     214
+Waiting:        3    8   3.3      7     214
+Total:          3    9   3.4      8     214
 
 Percentage of the requests served within a certain time (ms)
-  50%     14
-  66%     14
-  75%     15
-  80%     16
-  90%     19
-  95%     23
-  98%     28
-  99%     35
- 100%    222 (longest request)
+  50%      8
+  66%      8
+  75%      9
+  80%      9
+  90%     11
+  95%     13
+  98%     17
+  99%     19
+ 100%    214 (longest request)
 ```
 
 ## CPU and memory usage
