@@ -1,17 +1,15 @@
-# General
-Used RAML: [world-music-api](world-music-api)
+# Osprey Profiling
+## [`webapi-parser`](https://github.com/raml-org/webapi-parser) refactoring: before vs after
 
-NodeJS version: 13.5.0
-
-Versions:
-* osprey:
-  * master: a306d8e879cb5e18cfcd06ba8fca56c883957d0a
-  * rework_webapi_parser: 828169c3bbba0e539972d9b63eba07704d066968
-* osprey-mock-service:
-  * master: 8cc6b778b2aaae050a5f01ff338f2a29b679ec48
-  * rework_webapi_parser: 35b392e5e9607750ad5ea67e614b70ba61568f80
-
-# osprey
+* RAML used to test: [world-music-api](world-music-api)
+* NodeJS: v13.5.0
+* Versions:
+  * osprey:
+    * master (v0.5.4): a306d8e879cb5e18cfcd06ba8fca56c883957d0a
+    * rework_webapi_parser: 828169c3bbba0e539972d9b63eba07704d066968
+  * osprey-mock-service:
+    * master (v0.4.4): 8cc6b778b2aaae050a5f01ff338f2a29b679ec48
+    * rework_webapi_parser: 35b392e5e9607750ad5ea67e614b70ba61568f80
 
 ## Setup
 To test Osprey from `master`, install it via npm:
