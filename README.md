@@ -11,8 +11,22 @@
     * master (v0.4.4): 8cc6b778b2aaae050a5f01ff338f2a29b679ec48
     * rework_webapi_parser: 35b392e5e9607750ad5ea67e614b70ba61568f80
 
-# Osprey
+## Summary
+Based on profiling results produced by a specific profiling techniques used and a test application, following conclusions can be made:
 
+**Osprey.** After the rework with `webapi-parser`:
+  * An average time per request decreased by ~18% (4.3s to 3.5s);
+  * Number of requests an application is able to serve per second increased by  ~52% (2300 to 3500);
+  * Average CPU usage stayed roughly the same with periodic spikes increasing from 18% to 32%;
+  * Real memory usage increased from 80-110mb to 150-175mb.
+
+**Osprey-mock-service.** After the rework with `webapi-parser`:
+  * An average time per request decreased by ~9% (4.3s to 3.9s);
+  * Number of requests an application is able to serve per second increased by  ~9% (2300 to 2500);
+  * Average CPU usage stayed roughly the same with periodic spikes increasing from 11% to 22%;
+  * Real memory usage increased from 80-110mb to 150-200mb.
+
+# Osprey
 ## Setup
 To test Osprey from `master`, install it via npm:
 ```sh
