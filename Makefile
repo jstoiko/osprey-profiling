@@ -34,9 +34,9 @@ clone:
 	cd $(PROJ_ROOT)/node-raml-sanitize
 	git checkout $(BRANCH)
 	cd $(PROJ_ROOT)
-	git clone git@github.com:postatum/router.git
+	git clone git@github.com:mulesoft-labs/router.git
 	cd $(PROJ_ROOT)/router
-	git checkout engine-with-master
+	git checkout router-engine
 
 install:
 	cd $(PROJ_ROOT)/osprey-mock-service
