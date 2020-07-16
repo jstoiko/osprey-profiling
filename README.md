@@ -21,10 +21,10 @@ Based on profiling results produced by a specific profiling techniques used and 
   * Real memory usage increased from 80-110mb to 150-175mb.
 
 **Osprey-mock-service.** After the rework with `webapi-parser`:
-  * An average time per request decreased by ~9% (4.3s to 3.9s);
-  * Number of requests an application is able to serve per second increased by  ~9% (2300 to 2500);
-  * Average CPU usage stayed roughly the same with periodic spikes increasing from 11% to 22%;
-  * Real memory usage increased from 80-110mb to 150-200mb.
+  * An average time per request decreased by ~17%;
+  * Number of requests an application is able to serve per second increased by  ~17%;
+  * Average CPU usage stayed roughly the same with periodic 5x spikes;
+  * Real memory usage increased from 100-110mb to 150-200mb.
 
 # Osprey
 ## Setup
@@ -141,7 +141,7 @@ Percentage of the requests served within a certain time (ms)
 Installation:
 ```sh
 sudo pip uninstall Pillow
-sudo pip install psrecord matplotlib Pillowm
+sudo pip install psrecord matplotlib Pillow
 sudo apt-get install python-tk
 npm install -g artillery
 ```
@@ -194,7 +194,7 @@ sudo apt install apache2-utils
 
 Start server with:
 ```sh
-osprey-mock-service -f /path/to/osprey-profiling/world-music-api/api.raml -p 3000
+osprey-mock-service -f ./world-music-api/api.raml -p 3000
 ```
 
 Make requests and profile with (this makes 50000 requests with 10 concurrency):
@@ -208,33 +208,33 @@ Document Path:          /v1/songs?genre=foo&access_token=123
 Document Length:        0 bytes
 
 Concurrency Level:      10
-Time taken for tests:   21.649 seconds
+Time taken for tests:   58.818 seconds
 Complete requests:      50000
 Failed requests:        0
 Total transferred:      3750000 bytes
 HTML transferred:       0 bytes
-Requests per second:    2309.53 [#/sec] (mean)
-Time per request:       4.330 [ms] (mean)
-Time per request:       0.433 [ms] (mean, across all concurrent requests)
-Transfer rate:          169.16 [Kbytes/sec] received
+Requests per second:    850.08 [#/sec] (mean)
+Time per request:       11.764 [ms] (mean)
+Time per request:       1.176 [ms] (mean, across all concurrent requests)
+Transfer rate:          62.26 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0      14
-Processing:     1    4   1.4      4     214
-Waiting:        1    4   1.4      4     212
-Total:          1    4   1.4      4     214
+Connect:        0    0   0.2      0       4
+Processing:     2   11   4.0     12      49
+Waiting:        2   10   3.7     11      47
+Total:          2   12   4.1     12      49
 
 Percentage of the requests served within a certain time (ms)
-  50%      4
-  66%      4
-  75%      5
-  80%      5
-  90%      5
-  95%      6
-  98%      7
-  99%      8
- 100%    214 (longest request)
+  50%     12
+  66%     14
+  75%     14
+  80%     15
+  90%     16
+  95%     17
+  98%     22
+  99%     23
+ 100%     49 (longest request)
 ```
 
 ### rework_webapi_parser
@@ -243,41 +243,42 @@ Document Path:          /v1/songs?genre=foo&access_token=123
 Document Length:        0 bytes
 
 Concurrency Level:      10
-Time taken for tests:   19.551 seconds
+Time taken for tests:   49.847 seconds
 Complete requests:      50000
 Failed requests:        0
 Total transferred:      3750000 bytes
 HTML transferred:       0 bytes
-Requests per second:    2557.47 [#/sec] (mean)
-Time per request:       3.910 [ms] (mean)
-Time per request:       0.391 [ms] (mean, across all concurrent requests)
-Transfer rate:          187.31 [Kbytes/sec] received
+Requests per second:    1003.08 [#/sec] (mean)
+Time per request:       9.969 [ms] (mean)
+Time per request:       0.997 [ms] (mean, across all concurrent requests)
+Transfer rate:          73.47 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       2
-Processing:     1    4   2.5      3     211
-Waiting:        1    3   2.4      3     211
-Total:          1    4   2.5      3     211
+Connect:        0    0   0.3      0       8
+Processing:     1   10   3.5     10     101
+Waiting:        1    8   3.2      8      99
+Total:          2   10   3.6     11     101
 
 Percentage of the requests served within a certain time (ms)
-  50%      3
-  66%      4
-  75%      4
-  80%      4
-  90%      5
-  95%      6
-  98%      8
-  99%     10
- 100%    211 (longest request)
+  50%     11
+  66%     11
+  75%     12
+  80%     13
+  90%     14
+  95%     15
+  98%     17
+  99%     18
+ 100%    101 (longest request)
 ```
 
 ## CPU and memory usage
 ### Setup
 Installation:
 ```sh
-sudo pip install psrecord
-sudo apt-get install python-matplotlib python-tk
+sudo pip uninstall Pillow
+sudo pip install psrecord matplotlib Pillow
+sudo apt-get install python-tk
 npm install -g artillery
 ```
 
@@ -285,7 +286,7 @@ In three different terminals:
 
 1. Start server with:
 ```sh
-osprey-mock-service -f /path/to/osprey-profiling/world-music-api/api.raml -p 3000
+osprey-mock-service -f ./world-music-api/api.raml -p 3000
 ```
 
 2. Start profiler:
